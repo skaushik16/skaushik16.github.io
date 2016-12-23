@@ -1,0 +1,93 @@
+<html>
+<head>
+<script>
+
+
+//bubble sort
+/* function bubbleSort(arr){
+   var len = arr.length;
+   for (var i = len-1; i>=0; i--){
+     for(var j = 1; j<=i; j++){
+       if(arr[j-1]>arr[j]){
+           var temp = arr[j-1];
+           arr[j-1] = arr[j];
+           arr[j] = temp;
+        }
+     }
+   }
+   return arr;
+}
+
+console.log(" bubbleSort " + bubbleSort([7,5,2,4,3,9]));
+
+//selectiom sort
+
+ function selectionsort(arr){
+    for(var i = 0; i < arr.length; i++){
+       var minIndex  = i
+       for(var j = i+1; j < arr.length; j++){
+         if(arr[j] < arr[minIndex  ]){
+	    			minIndex = j; 
+         }
+       }
+       var temp = arr[i];
+       arr[i] = arr[minIndex];
+       arr[minIndex] = temp;
+
+
+
+    
+    }
+return arr;
+}
+
+
+
+console.log(" selectionsort" + selectionsort([7,5,2,4,0,9,0,7])); */
+
+
+var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+ 
+function mergeSort(arr)
+{
+    if (arr.length < 2)
+        return arr;
+ 
+    var middle = parseInt(arr.length / 2);
+    var left   = arr.slice(0, middle);
+    var right  = arr.slice(middle, arr.length);
+console.log('arr =='+ arr);
+ 
+    return merge(mergeSort(left), mergeSort(right));
+}
+ 
+function merge(left, right)
+{
+    var result = [];
+ 
+    while (left.length && right.length) {
+        if (left[0] <= right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+ 
+    while (left.length)
+        result.push(left.shift());
+ 
+    while (right.length)
+        result.push(right.shift());
+ 
+    return result;
+}
+ 
+console.log(mergeSort(a));
+</script>
+</head>
+
+<body>
+dafdsf
+</body>
+
+</html>
