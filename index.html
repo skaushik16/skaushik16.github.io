@@ -63,25 +63,23 @@
 </div>
 <script>
 function checkTriangleType(){
-   $('#lengthserror').hide();
+  document.getElementById('lengthserror').style.display = none;
+  
   var len1 = document.getElementById('length1').value ;
   var len2 = document.getElementById('length2').value ;
   var len3 = document.getElementById('length3').value ;
   if(len1 == ""  || len2 == "" || len3 == ""){
-     $('#lengthserror').show();
+     document.getElementById('lengthserror').style.display = block;
   }
   if(len1 == len2  && len1 == len3) {
 	 
 	   document.getElementById("typeTrg").innerHTML = "Equilateral"
-	  draw();
+	
   }else if (len1 == len2  || len1 == len3 || len2 == len3){
 	   document.getElementById("typeTrg").innerHTML = "isosceles"
-	    draw2();
 	   
   }else{
 	document.getElementById("typeTrg").innerHTML = "Scalene"
-	  
-	  
   }	  
 }
 
@@ -99,20 +97,7 @@ function draw() {
 	ctx.closePath();
   }
 }
-	function draw2() {
-  var canvas = document.getElementById('canvas');
-  if (canvas.getContext){
-    	var ctx = canvas.getContext('2d');
 
-    	var height = 100 * (Math.sqrt(3)/2);
-	ctx.beginPath();
-	 ctx.moveTo(175,0);
-	ctx.lineTo(100,100);
-	ctx.lineTo(10,100);
-	ctx.fill();
-	ctx.closePath();
-  }
-}
 </script>
 	
 </body>
