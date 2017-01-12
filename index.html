@@ -80,15 +80,15 @@ function checkTriangleType(){
 function draw() {
   var canvas = document.getElementById('canvas');
   if (canvas.getContext){
-    var context = canvas.getContext('2d');
+    var ctx = canvas.getContext('2d');
 
     var height = 100 * (Math.sqrt(3)/2);
-context.beginPath();
+ctx.beginPath();
 ctx.moveTo(canvas.width/2, canvas.height/2-50);
 ctx.lineTo(canvas.width/2-50, canvas.height/2+50);
 ctx.lineTo(canvas.width/2+50, canvas.height/2+50);
 ctx.fill();
-context.closePath();
+ctx.closePath();
   }
 }
 </script>
