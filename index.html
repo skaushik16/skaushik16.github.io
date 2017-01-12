@@ -9,35 +9,8 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script> 
 
 <link href="css/bootstrap.min.css" rel="stylesheet">   
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">    
-
-<style>
-@font-face {
-  font-family: 'Open Sans Condensed';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(http://fonts.gstatic.com/s/opensanscondensed/v10/gk5FxslNkTTHtojXrkp-xBEur64QvLD-0IbiAdTUNXE.woff2) format('woff2');
-}
-	
-.required:after {
-    content: "*";
-    color:red;
- 
-}
-
-div.img {
-   width:100px; /*width of your image*/
-   height:100px; /*height of your image*/
-   background-image:url('yourimage.file');
-   margin:0; /* If you want no margin */
-   padding:0; /*if your want to padding */
-}
-inputClass {
- width:100px;
-}	
-	
-</style>
-
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">   
+<link href="css/triangle.css" rel="stylesheet">
 
 
 </head>
@@ -88,14 +61,16 @@ function checkTriangleType(){
   var len3 = document.getElementById('length3').value ;
   if(len1 == ""  || len2 == "" || len3 == ""){
      document.getElementById('lengthserror').style.display = 'block';
-  }
-  if(len1 == len2  && len1 == len3) { 
-   document.getElementById("typeTrg").innerHTML = "Its a equilateral triangle";
-  }else if (len1 == len2  || len1 == len3 || len2 == len3){
-     document.getElementById("typeTrg").innerHTML = "Its a isosceles triangle";
   }else{
-    document.getElementById("typeTrg").innerHTML = "its a scalene triangle";
-  }	  
+	if(len1 == len2  && len1 == len3) { 
+	   document.getElementById("typeTrg").innerHTML = "Its a equilateral triangle";
+	}else if (len1 == len2  || len1 == len3 || len2 == len3){
+	     document.getElementById("typeTrg").innerHTML = "Its a isosceles triangle";
+	}else{
+	    document.getElementById("typeTrg").innerHTML = "its a scalene triangle";
+	}	  
+  }
+    
 }
 
 function draw() {
