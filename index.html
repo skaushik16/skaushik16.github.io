@@ -32,7 +32,7 @@ div.img {
    margin:0; /* If you want no margin */
    padding:0; /*if your want to padding */
 }
-input {
+inputClass {
  width:100px;
 }	
 	
@@ -61,15 +61,15 @@ input {
    </div>
    <div class="form-group required">
       <label for="length2"></label>
-      <input type="number" class="form-control" min="1" step="1" id="length2" placeholder="Length 2">
+      <input type="number" class="form-control inputClass" min="1" step="1" id="length2" placeholder="Length 2">
  </div>
  <div class="form-group required">
       <label for="length3"></label>
-      <input type="number" class="form-control" min="1" step="1" id="length3" placeholder="Length 3">
+      <input type="number" class="form-control inputClass" min="1" step="1" id="length3" placeholder="Length 3">
  </div>
 	
  <div class="form-group">
-    <input type="button" class="btn btn-default" onclick ="checkTriangleType()" value="Get Results" >
+    <input type="button" class="btn btn-default inputClass" onclick ="checkTriangleType()" value="Get Results" >
 </div>
    <div>
      	 
@@ -81,20 +81,20 @@ input {
 </div>
 <script>
 function checkTriangleType(){
-  document.getElementById('lengthserror').style.display = none;
+  document.getElementById('lengthserror').style.display = 'none';
   
   var len1 = document.getElementById('length1').value ;
   var len2 = document.getElementById('length2').value ;
   var len3 = document.getElementById('length3').value ;
   if(len1 == ""  || len2 == "" || len3 == ""){
-     document.getElementById('lengthserror').style.display = block;
+     document.getElementById('lengthserror').style.display = 'block';
   }
   if(len1 == len2  && len1 == len3) { 
-   document.getElementById("typeTrg").innerHTML = "Equilateral";
+   document.getElementById("typeTrg").innerHTML = "Its a equilateral triangle";
   }else if (len1 == len2  || len1 == len3 || len2 == len3){
-     document.getElementById("typeTrg").innerHTML = "isosceles";
+     document.getElementById("typeTrg").innerHTML = "Its a isosceles triangle";
   }else{
-    document.getElementById("typeTrg").innerHTML = "Scalene";
+    document.getElementById("typeTrg").innerHTML = "its a scalene triangle";
   }	  
 }
 
