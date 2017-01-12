@@ -11,6 +11,13 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">   
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">    
 
+<style>
+.required:after {
+    content: "*";
+    color:red;
+ 
+}	
+</style>
 
 
 
@@ -25,20 +32,24 @@
   <div>
     <h4> Enter 3 Dimensions (lengths) </h4>	
   </div>
+<div class="alert alert-danger" id="lengthserror">
+  <strong>error:</strong> Please note all lengths are required!
+</div>
 <form class="form-inline" role="form" id="triangleCheck">
-   <div class="form-group">
+   <div class="form-group required">
       <label for="length1"></label>
 	  <input type="number" class="form-control" min="1" step="1" id="length1" placeholder="Length 1">
    </div>
-   <div class="form-group">
+   <div class="form-group required">
       <label for="length2"></label>
 	  <input type="number" class="form-control" min="1" step="1" id="length2" placeholder="Length 2">
  </div>
-   <div class="form-group">
-      <label for="pwd"></label>
+   <div class="form-group required">
+      <label for="length3"></label>
 	  <input type="number" class="form-control" min="1" step="1" id="length3" placeholder="Length 3">
    </div>
-   <div class="col-sm-offset-2 col-sm-8">
+	
+   <div class="col-sm-offset-2 col-sm-8" style="padding-top:10px;">
 	<input type="button" class="btn btn-default" onclick ="checkTriangleType()" value="Get Results" >
 
    </div>
@@ -47,8 +58,16 @@
 </div>
 <script>
 function checkTriangleType(){
-   alert(document.getElementById('length1'));
-	
+  
+  var len1 = document.getElementById('length1').value ;
+  var len2 = document.getElementById('length2').value ;
+  var len3 = document.getElementById('length3').value ;
+  if(len1 ==0 || len2 == 0 || len3 == 0){
+     $('#lengthserror').show();
+  }
+  if(len1 == len2  && len1 === len3 && len1 !== null) {
+	 console.log('equilateral.'); 
+  }
 }
 	
 	</script>
