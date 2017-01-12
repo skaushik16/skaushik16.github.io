@@ -84,11 +84,10 @@ function draw() {
 
     var height = 100 * (Math.sqrt(3)/2);
 context.beginPath();
-context.moveTo(X, Y);
-context.lineTo(X+50, Y+height);
-context.lineTo(X-50, Y+height);
-context.lineTo(X, Y);
-context.fill();
+ctx.moveTo(canvas.width/2, canvas.height/2-50);
+ctx.lineTo(canvas.width/2-50, canvas.height/2+50);
+ctx.lineTo(canvas.width/2+50, canvas.height/2+50);
+ctx.fill();
 context.closePath();
   }
 }
