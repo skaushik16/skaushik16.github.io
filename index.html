@@ -17,7 +17,7 @@
 
 <body >
 	
-<div class="container" style="max-width:600px;margin:60px auto;">
+<div class="container-fluid">
   <div>
     <h3> Determine Triangle Type </h3>	
   </div>
@@ -25,7 +25,7 @@
     <h4> Enter 3 Dimensions (lengths) </h4>	
   </div>
 <div class="alert alert-danger" id="lengthserror" style="display:none">
-  <strong>error:</strong> Please note all lengths are required!
+	<strong>error:</strong> Please note all lengths are required! <span></span>
 </div>
 <form class="form-inline" role="form" id="triangleCheck">
    <div class="form-group required">
@@ -53,21 +53,24 @@
 </form>
 </div>
 <script>
+// only numbers allowed
 function checkTriangleType(){
   document.getElementById('lengthserror').style.display = 'none';
   
   var len1 = document.getElementById('length1').value ;
   var len2 = document.getElementById('length2').value ;
   var len3 = document.getElementById('length3').value ;
+ // check if any field is empty
   if(len1 == ""  || len2 == "" || len3 == ""){
+     // can indicate which field is missing by using JS or bootstrap
      document.getElementById('lengthserror').style.display = 'block';
   }else{
 	if(len1 == len2  && len1 == len3) { 
 	   document.getElementById("typeTrg").innerHTML = "Its a equilateral triangle";
 	}else if (len1 == len2  || len1 == len3 || len2 == len3){
-	     document.getElementById("typeTrg").innerHTML = "Its a isosceles triangle";
+	   document.getElementById("typeTrg").innerHTML = "Its a isosceles triangle";
 	}else{
-	    document.getElementById("typeTrg").innerHTML = "its a scalene triangle";
+	   document.getElementById("typeTrg").innerHTML = "its a scalene triangle";
 	}	  
   }
     
