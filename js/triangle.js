@@ -15,11 +15,11 @@ function checkTriangleType(){
   
   }else{
 	if(len1 == len2  && len1 == len3) { 
-	   document.getElementById("typeTrg").innerHTML = "Its a equilateral triangle";
+	   document.getElementById("typeTrg").innerHTML = "It's an equilateral triangle";
 	}else if (len1 == len2  || len1 == len3 || len2 == len3){
-	   document.getElementById("typeTrg").innerHTML = "Its a isosceles triangle";
+	   document.getElementById("typeTrg").innerHTML = "It's an isosceles triangle";
 	}else{
-	   document.getElementById("typeTrg").innerHTML = "its a scalene triangle";
+	   document.getElementById("typeTrg").innerHTML = "it's an scalene triangle";
 	}	  
   }
     
