@@ -16,18 +16,18 @@
 
 </head>
 
-<body >
-	
+<body>
+
 <div class="container-fluid">
   <div>
     <h3> Determine Triangle Type </h3>	
   </div>
-  <div style="padding-top:10px">
+  <div style="padding-top:5px">
     <h4> Enter 3 Dimensions (lengths) </h4>
     <span><em>* denotes required fields</em></span>
   </div>
 <div class="alert alert-danger" id="lengthserror" style="display:none">
-	<strong>error:</strong> Please note all lengths are required! <span></span>
+  <strong>error:</strong> Please note all lengths are required! <span></span>
 </div>
 <form class="form-inline" role="form" id="triangleCheck">
    <div class="form-group required">
@@ -37,24 +37,20 @@
    <div class="form-group required">
       <label for="length2"></label>
       <input type="number" class="form-control inputClass" min="1" step="1" id="length2" placeholder="Length 2">
- </div>
- <div class="form-group required">
+  </div>
+  <div class="form-group required">
       <label for="length3"></label>
       <input type="number" class="form-control inputClass" min="1" step="1" id="length3" placeholder="Length 3">
- </div>
-	
- <div class="form-group" style="padding-left:10px;">
-    <input type="button" class="btn btn-default inputClass" onclick ="checkTriangleType()" value="Get Results" >
-</div>
-   <div style="padding-top:10px;">
-     <span id="typeTrg"></span>
   </div>
- 
-</form>
+  <div class="form-group" style="padding-left:10px;">
+    <input type="button" class="btn btn-default inputClass" onclick ="checkTriangleType()" value="Get Results" >
+  </div>
+   <div style="padding-top:10px;">
+    <span>Results</span><span id="typeTrg"></span>
+  </div>
+  </form>
 </div>
 
 <script type="text/javascript" src="js/triangle.js"></script> 	
 </body>
-
-
 </html>
