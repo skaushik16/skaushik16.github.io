@@ -12,9 +12,7 @@ function checkTriangleType(){
      // can indicate which field is missing by using JS or bootstrap
      document.getElementById('lengthserror').style.display = 'block';
      document.getElementById("lengthserror").innerHTML ="All lengths are required "
-  }else if(!(Number.isInteger(len1)) || !(Number.isInteger(len2)) || !(Number.isInteger(len3))){
-      document.getElementById('lengthserror').style.display = 'block';
-      document.getElementById("lengthserror").innerHTML ="Only numbers allowed "
+  
   }else{
 	if(len1 == len2  && len1 == len3) { 
 	   document.getElementById("typeTrg").innerHTML = "Its a equilateral triangle";
